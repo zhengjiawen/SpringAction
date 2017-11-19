@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,6 +23,7 @@ public class CompactDiscTest {
     private MediaPlayer player;
 
     @Autowired
+    @Qualifier("sgt")
     private CompactDisc cd;
 
     @Test
@@ -33,6 +35,7 @@ public class CompactDiscTest {
 
     @Test
     public void play(){
+        assertNotNull(player);
         player.play();
     }
 
